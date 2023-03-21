@@ -1,0 +1,9 @@
+{{ print "\n<!-- Javascript -->" | safeHTML }}
+{{- $vendor := resources.Match "js/vendor/*.js" -}}
+{{- $js := resources.Match "js/*.js" -}}
+{{- $targetJSPath := path.Join "/common" "js/ui.js" -}}
+{{- $commonJs := append $js $vendor | resources.Concat $targetJSPath -}}
+{{- if eq hugo.Environment "production" -}}
+ {{- $commonJs = $commonJs | resources.Minify -}}
+{{- end }}
+<script src="{{ $commonJs.Permalink | relURL }}"></script>

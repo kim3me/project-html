@@ -1,0 +1,21 @@
+{
+  "disableKinds": [
+    "section",
+    "taxonomy",
+    "term",
+    "RSS",
+    "robotsTXT",
+    "404",
+    "sitemap"
+  ],
+  "minify": {
+    "minifyOutput": true,
+    "tdewolff": {
+      "html": {
+        "keepComments": true,
+        "keepQuotes": true,
+        "keepWhitespace": false
+      }
+    }
+  }
+}

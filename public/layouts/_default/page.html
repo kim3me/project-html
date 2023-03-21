@@ -1,0 +1,28 @@
+{{ define "main" }}
+<head>
+  {{ partial "page/head" . -}}
+</head>
+{{ block "body_override" . }}
+
+<body>
+  {{ end }}
+  <div id="wrap">
+    {{ print "<!-- HEADER -->" | safeHTML }} 
+    {{ partial "page/header" . -}} 
+    {{ print "<!-- //HEADER -->" | safeHTML }} 
+
+    {{ print "<!-- SIDEBAR -->" | safeHTML }} 
+    {{ partial "sidebar" . -}} 
+    {{ print "<!-- //SIDEBAR -->" | safeHTML }} 
+
+    {{ print "<!-- CONTAINER -->" | safeHTML }} 
+    {{- .Content -}} 
+    {{ print "<!-- //CONTAINER -->" | safeHTML }}
+    
+    {{ print "<!-- FOOTER -->" | safeHTML }} 
+    {{ partial "page/footer" . -}} 
+    {{ print "<!-- FOOTER -->" | safeHTML }}
+  </div>
+  {{- partial "page/script" . -}}
+</body>
+{{ end }}

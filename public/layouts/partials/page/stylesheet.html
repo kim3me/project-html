@@ -1,0 +1,14 @@
+{{ print "\n<!-- StyleSheet -->\n" | safeHTML }}
+{{- $targetCssPath := path.Join "/common" "css/ui.css" -}}
+{{- $sassOptions := dict "targetPath" $targetCssPath "outputStyle" "expanded" "precision" 6 -}}
+{{- $postcssOptions := dict "use" "autoprefixer" "noMap" true -}}
+{{ if eq hugo.Environment "production" -}}
+ {{- $sassOptions = merge $sassOptions (dict "outputStyle" "compressed") -}}
+{{- end -}}
+{{- $commonCss := resources.Get "scss/ui.scss" | toCSS $sassOptions | postCSS $postcssOptions -}}
+{{- $vendor := resources.Match "scss/vendor/*.css" -}}
+{{- $commonCss := append $commonCss $vendor | resources.Concat $targetCssPath -}}
+{{ if eq hugo.Environment "production" -}}
+ {{- $commonCss = $commonCss | resources.Minify -}}
+{{- end -}}
+<link href="{{ $commonCss.Permalink | relURL }}" rel="stylesheet">

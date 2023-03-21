@@ -1,0 +1,24 @@
+{
+  "name": "project-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+		"build": "hugo --environment 'development' --cleanDestinationDir",
+		"build:prod": "hugo --environment 'production' --cleanDestinationDir --minify",
+		"serve": "hugo server --port 9100 --environment 'development' --disableFastRender",
+		"serve:prod": "hugo server --port 9100 --environment 'production' --disableFastRender --minify"
+	},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "hugo-bin": {
+    "buildTags": "extended"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "hugo-bin": "^0.101.2",
+    "postcss-cli": "^10.1.0"
+  }
+}

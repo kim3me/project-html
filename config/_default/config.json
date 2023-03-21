@@ -1,0 +1,45 @@
+{
+  "languageCode": "ko-KR",
+  "title": "Project HTML",
+  "baseURL": "http://localhost:9100",
+  "publishDir": "dist",
+  "disableKinds": ["section", "taxonomy", "term", "RSS", "robotsTXT", "404"],
+  "buildDrafts": true,
+  "buildFuture": true,
+  "enableRobotsTXT": false,
+  "metaDataFormat": "yaml",
+  "staticDir": ["static"],
+  "relativeURLs": true,
+  "uglyURLs": true,
+  "security": {
+    "enableInlineShortcodes": true
+  },
+  "markup": {
+    "goldmark": {
+      "renderer": {
+        "unsafe": true
+      }
+    },
+    "highlight": {
+      "noClasses": false
+    },
+    "tableOfContents": {
+      "startLevel": 2,
+      "endLevel": 6
+    }
+  },
+  "module": {
+    "mounts": [
+      { "source": "public/assets", "target": "assets" },
+      { "source": "public/content", "target": "content" },
+      { "source": "public/data", "target": "data" },
+      { "source": "public/layouts", "target": "layouts" },
+      { "source": "public/static", "target": "static" }
+    ]
+  },
+  "params": {
+    "siteTitle": "Project Title",
+    "siteDescription": "Project Description",
+    "siteUrl": "Project URL"
+  }
+}

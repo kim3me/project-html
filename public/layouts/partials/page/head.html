@@ -1,0 +1,14 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="{{ .Site.Params.siteDescription }}" />
+<title>{{ .Site.Params.siteTitle }}</title>
+{{ print "<!-- Favicons -->" | safeHTML }}
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+{{ print "<!-- Open Graph -->" | safeHTML }}
+<meta property="og:title" content="{{ .Site.Params.siteTitle }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Site.Params.siteUrl }}" />
+<meta property="og:image" content="/common/images/icons/og.png" />
+<meta property="og:description" content="{{ .Site.Params.siteDescription }}" />
+{{- partial "page/stylesheet" . -}}
