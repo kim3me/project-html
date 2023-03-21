@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Project Title</title>
+<style type="text/css">
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+/* COMMON */
+body {background-color: #f5f5f5;}
+#wrapper {position:relative;padding:0 15px;}
+#header {width:100%;margin-top:15px;}
+h1 {box-sizing:border-box;padding:15px 30px;font-size:20px;color:#fff;background-color:#333;}
+#content {overflow:hidden;margin-top:15px;}
+.section {position:relative;width:100%;box-sizing:border-box;margin-top:15px;padding-bottom:60px;border:1px solid #e6e6e6;background-color:#fff;}
+.section:first-child {margin-top:0;}
+.section .tit_section {margin-top:15px;padding:0 15px;font-weight:bold;font-size:16px;line-height:24px;color:#333;}
+.box_table {position:relative;width:100%;box-sizing:border-box;margin-top:5px;padding:0 15px;}
+.box_table .tbl_list {width:100%;margin:0;border-collapse:collapse;border-spacing:0;}
+.box_table .tbl_list th,
+.box_table .tbl_list td {height:22px;font-size:12px;line-height:16px;padding:5px;border:1px solid #ddd;text-align:center;vertical-align:middle;}
+.box_table .tbl_list thead th {background-color:#f5f5f5;}
+.btn_gotop {display:flex;justify-content:center;align-items:center;position:absolute;bottom:15px;right:15px;min-width:48px;height:30px;
+border:1px solid #ccc;border-radius:4px;font-size:14px;line-height:20px;color:#333;background-color:#fff;text-decoration:none;cursor:pointer;}
+.btn_gotop:hover {border-color:#333;background-color:#333;color:#fff;}
+</style>
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <h1>HTML 템플릿 가이드</h1>
+    </header>
+    <main id="content">
+      <!-- SECTION -->
+      <section class="section">
+        <h2 class="tit_section">컨텐츠 페이지 리스트</h2>
+        <div class="box_table">
+          <table class="tbl_list">
+            <colgroup>
+              <col style="width: 5%" />
+              <col style="width: 20%" />
+              <col style="width: 10%" />
+              <col style="width: 10%" />
+              <col style="width: 10%" />
+              <col style="width: auto" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>페이지명</th>
+                <th>확인경로</th>
+                <th>진행여부</th>
+                <th>담당자</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>page1 title</td>
+                <td>
+                  <a href="./pages/dir1/page1.html" target="_blank">바로가기</a>
+                </td>
+                <td>진행중</td>
+                <td>이름</td>
+                <td>설명</td>
+              </tr>
+              
+              <tr>
+                <td>2</td>
+                <td>page1-2 title</td>
+                <td>
+                  <a href="./pages/dir1/page1_2.html" target="_blank">바로가기</a>
+                </td>
+                <td>진행중</td>
+                <td>이름</td>
+                <td>설명</td>
+              </tr>
+              
+              <tr>
+                <td>3</td>
+                <td>page2 title</td>
+                <td>
+                  <a href="./pages/dir2/page2.html" target="_blank">바로가기</a>
+                </td>
+                <td>진행완료</td>
+                <td>이름</td>
+                <td>설명</td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+        <button class="btn_gotop" onclick="window.scrollTo(0, 0);">TOP</button>
+      </section>
+      <!-- //SECTION -->
+    </main>
+  </div>
+</body>
+</html>
